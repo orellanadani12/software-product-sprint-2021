@@ -7,3 +7,157 @@
 #greeting-container {
   margin-top: 20px;
 }
+
+.container{
+    position: relative;
+    height: 900px;
+    overflow: hidden;
+}
+
+html{
+    font-size: 10px;
+    font-family: 'Roboto', sans-serif;
+    color: #eee;
+}
+
+body{
+    width: 100%;
+    height: 100%;
+    background: linear-gradient( to bottom, rgb(27, 27, 27),rgb(70, 68, 68));
+}
+
+p{
+    font-size: 1.8rem;
+    font-weight: 300;
+}
+
+img{
+    width: 30%;
+}
+
+.video{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.row{
+    position: absolute;
+    min-width: 80%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.row h1{
+    font-size: 15rem;
+    font-family: 'Lucida Handwriting', cursive;
+    background: linear-gradient( to bottom, #ee6654, #fa7f38);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 0rem;
+    user-select: none;
+    border-color: black;
+}
+
+.row h6{
+    background: whitesmoke;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2rem;
+    font-weight: 300;
+}
+
+.about{
+    padding: 10px;
+    box-shadow: 0px 15px 10px -15px rgb(0, 0, 0);
+}
+
+.about > .about-container{
+    width: fit-content;
+    margin-bottom: 0;
+    padding: 10px;
+    height: 50vh;
+}
+
+.about > .about-container > img{
+    height: 40vh;
+    margin: 10px;
+    width: auto;
+    float: left;
+}
+
+.about > .about-container > h1{
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 0;
+    margin-bottom: 6rem;
+    font-size: 5rem;
+    opacity: .3;    
+}
+
+.about > .about-container > p{
+    margin: 20px;
+    padding: 5px;
+    line-height: 40px;
+    text-align: justify;
+
+}
+
+.project{
+    padding: 10px;
+}
+
+.project > .project-container{
+    width: fit-content;
+    margin-bottom: 0;
+    padding: 10px;
+    height: 50vh;
+}
+
+.project > .project-container > img{
+    height: 40vh;
+    margin: 20px;
+    width: auto;
+    float: left;
+}
+
+.project > .project-container > h1{
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 0;
+    margin-bottom: 6rem;
+    font-size: 5rem;
+    opacity: .3;    
+}
+
+.project > .project-container > p{
+    margin: 20px;
+    padding: 5px;
+    line-height: 40px;
+    text-align: justify;
+
+}
+
+.moreImages{
+    padding: 10px;
+    box-shadow: 0px 15px 10px -15px rgb(0, 0, 0);    
+}
+
+.moreImages > .moreImages-container > h1{
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 0;
+    margin-bottom: 6rem;
+    margin-top: 50rem;
+    font-size: 5rem;
+    opacity: .3;    
+}
