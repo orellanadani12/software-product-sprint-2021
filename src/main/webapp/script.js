@@ -40,6 +40,7 @@ async function showFacts() {
   alert(randomFact);
 }
 
+/** Loads the user responses to the page */
 function loadUsers() {
   fetch('/list-users').then(response => response.json()).then((users) => {
     const userListElement = document.getElementById('users-list');

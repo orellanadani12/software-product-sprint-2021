@@ -24,20 +24,19 @@ public class FetchDatastore extends HttpServlet {
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
     Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
     Query<Entity> query =
-        Query.newEntityQueryBuilder().setKind("User").setOrderBy(OrderBy.desc("timestamp")).build();
+        Query.newEntityQueryBuilder().setKind("User").setOrderBy(OrderBy.desc("name")).build();
     QueryResults<Entity> results = datastore.run(query);
 
     List<User> users = new ArrayList<>();
     while (results.hasNext()) {
       Entity entity = results.next();
 
-      long id = entity.getKey().getId();
+      Long id = entity.getKey().getId();
       String name = entity.getString("name");
       String email = entity.getString("email");
       String message = entity.getString("message");
-      long timestamp = entity.getLong("timestamp");
 
-      User user = new User(id, name, email, message, timestamp);
+      User user = new User(id, name, email, message);
       users.add(user);
     }
 
