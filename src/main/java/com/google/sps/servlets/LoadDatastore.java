@@ -13,24 +13,25 @@ import javax.servlet.http.HttpServletResponse;
 import org.jsoup.Jsoup;
 import org.jsoup.safety.Whitelist;
 
+/** Servelet that handles the user input to the form */
 @WebServlet("/form-handler")
 public class LoadDatastore extends HttpServlet {
 
   @Override
   public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-    // Get the value entered in the form.
+    // Get the value entered in the form
     long timestamp = System.currentTimeMillis();
     String nameTextValue = Jsoup.clean(request.getParameter("nameText-input"), Whitelist.none());
     String emailTextValue = Jsoup.clean(request.getParameter("emailText-input"), Whitelist.none());
     String messageTextValue = Jsoup.clean(request.getParameter("messageText-input"), Whitelist.none());
 
-    // Print the value so you can see it in the server logs.
+    // Print the value so you can see it in the server logs
     System.out.println("You submitted: " + nameTextValue);
     System.out.println("You submitted: " + emailTextValue);
     System.out.println("You submitted: " + messageTextValue);
 
-    // Write the value to the response so the user can see it.
+    // Write the value to the response so the user can see it
     response.getWriter().println("You submitted: " + nameTextValue);
     response.getWriter().println("You submitted: " + emailTextValue);
     response.getWriter().println("You submitted: " + messageTextValue);
@@ -38,6 +39,7 @@ public class LoadDatastore extends HttpServlet {
     Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
 
     KeyFactory keyFactory = datastore.newKeyFactory().setKind("User");
+
     FullEntity contactInfoEntity =
         Entity.newBuilder(keyFactory.newKey())
             .set("name", nameTextValue)
@@ -45,6 +47,7 @@ public class LoadDatastore extends HttpServlet {
             .set("message", messageTextValue)
             .set("timestamp", timestamp)
             .build();
+            
     datastore.put(contactInfoEntity);
     response.sendRedirect("/index.html");
   }
