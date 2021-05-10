@@ -15,7 +15,7 @@
 /**
  * Adds a random greeting to the page.
  */
-function addRandomGreeting() {
+/**function addRandomGreeting() {
   const greetings =
       ['Hello world!', '¡Hola Mundo!', '你好，世界！', 'Bonjour le monde!'];
 
@@ -28,7 +28,7 @@ function addRandomGreeting() {
 }
 
 /** Fetches the current date from the server and adds it to the page. */
-async function showFacts() {
+/**async function showFacts() {
   const responseFromServer = await fetch('/facts');
 //   const textFromResponse = await responseFromServer.text();
   console.log(responseFromServer);
@@ -38,7 +38,7 @@ async function showFacts() {
 
   console.log(randomFact);
   alert(randomFact);
-}
+}*/
 
 function loadUsers() {
   fetch('/list-users').then(response => response.json()).then((users) => {

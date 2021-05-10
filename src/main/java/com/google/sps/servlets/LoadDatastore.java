@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.jsoup.Jsoup;
 import org.jsoup.safety.Whitelist;
 
+/** Servelet that handles the form */
 @WebServlet("/form-handler")
 public class LoadDatastore extends HttpServlet {
 
